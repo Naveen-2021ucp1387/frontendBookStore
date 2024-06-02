@@ -57,7 +57,7 @@
 //     };
 
 //     await axios
-//       .post("http://localhost:4000/order", {
+//       .post("https://backend-book-xi.vercel.app/order", {
 //         amount: item.price,
 //         currency: "INR",
 //         receiptId: "UniqueReceiptId",
@@ -75,7 +75,7 @@
 //         }
 //       });
 //     // try {
-//     //   const response = await axios.post("http://localhost:4000/order", {
+//     //   const response = await axios.post("https://backend-book-xi.vercel.app/order", {
 //     //     amount: item.price, // Pass item price to your backend
 //     //     currency: "INR", // or any other currency
 //     //     receiptId: "UniqueReceiptId", // Generate a unique receipt ID for each transaction
@@ -88,7 +88,7 @@
 //     // }
 //     /*
 //     await axios
-//       .post("http://localhost:4000/order",  {
+//       .post("https://backend-book-xi.vercel.app/order",  {
 //         amount: item.price,
 //         currency: "INR",
 //         receiptId: "UniqueReceiptId",
@@ -170,7 +170,7 @@
 //     };
 
 //     try {
-//       const response = await axios.post("http://localhost:4000/order", {
+//       const response = await axios.post("https://backend-book-xi.vercel.app/order", {
 //         amount: item.price,
 //         currency: "INR",
 //         receiptId: "UniqueReceiptId",
@@ -240,11 +240,14 @@ function Cards({ item }) {
     };
 
     try {
-      const response = await axios.post("http://localhost:4000/order", {
-        amount: item.price * 100, // Ensure this is in the smallest currency unit (paise)
-        currency: "INR",
-        receipt: "receipt#1",
-      });
+      const response = await axios.post(
+        "https://backend-book-xi.vercel.app/order",
+        {
+          amount: item.price * 100, // Ensure this is in the smallest currency unit (paise)
+          currency: "INR",
+          receipt: "receipt#1",
+        }
+      );
 
       console.log(response.data);
 

@@ -29,7 +29,7 @@ export const Contact = () => {
       status: true,
     };
     await axios
-      .post("http://localhost:4000/contact", userInfo)
+      .post("https://backend-book-xi.vercel.app/contact", userInfo)
       .then((res) => {
         toast.success("Message Sent Successfully");
       })
